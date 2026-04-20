@@ -18,7 +18,7 @@ public class BusinessCoach {
         boolean invitationOrLotOfMoney = invitation || moneyAccount > 50_000;
         boolean notBlacklist = !blacklist;
 
-        boolean result = fullAge && invitationOrLotOfMoney && !blacklist;
+        boolean result = fullAge && invitationOrLotOfMoney && notBlacklist;
 
         System.out.println("Есть 18 лет? " + fullAge);
         System.out.println("Есть приглашение или на счёте больше 50000? " + invitationOrLotOfMoney);
