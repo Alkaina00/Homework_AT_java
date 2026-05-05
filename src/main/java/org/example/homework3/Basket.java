@@ -34,8 +34,7 @@ public class Basket {
         shortNameProducts(allProducts);
 
         // Выведите среди всех покупок Пети, Коли и Терентия среднюю длину названия товара среди всех представленных товаров
-        System.out.println("Средняя длина названия товара среди всех представленных товаров: " +
-                String.format("%.2f", avgNameProduct(allProducts)) + "\n");
+        System.out.printf("Средняя длина названия товара среди всех представленных товаров: %.2f\n", avgNameProduct(allProducts));
     }
 
 
@@ -45,13 +44,11 @@ public class Basket {
         int count2 = basket2.length;
 
         if(count1 == count2)
-            System.out.println(String.format("Количество товаров в корзине у %s и %s одинаковое: %d", name1, name2, count1) + "\n");
+            System.out.printf("Количество товаров в корзине у %s и %s одинаковое: %d\n", name1, name2, count1);
         else if (count1 > count2)
-            System.out.println(String.format("Количество товаров в корзине у %s (%d) больше чем у %s (%d) на %d.",
-                    name1, count1, name2, count2, count1 - count2) + "\n");
+            System.out.printf("Количество товаров в корзине у %s (%d) больше чем у %s (%d) на %d.\n", name1, count1, name2, count2, count1 - count2);
         else
-            System.out.println(String.format("Количество товаров в корзине у %s (%d) больше чем у %s (%d) на %d.",
-                    name2, count2, name1, count1, count2 - count1) + "\n");
+            System.out.printf("Количество товаров в корзине у %s (%d) больше чем у %s (%d) на %d.\n", name2, count2, name1, count1, count2 - count1);
     }
 
     // метод вывода результата сравнения корзин по составу
@@ -59,11 +56,12 @@ public class Basket {
         boolean identicallyArrays = Arrays.equals(basket1, basket2);
 
         if(identicallyArrays)
-            System.out.println(String.format("Состав корзины %s и %s одинаковый: ", name1, name2) + Arrays.toString(basket1) + "\n");
-        else
-            System.out.println(String.format("Состав корзины %s и %s разный: ", name1, name2) + "\n" +
-                String.format("Состав корзины %s: ", name1) + Arrays.toString(basket1) + "\n" +
-                String.format("Состав корзины %s: ", name2) + Arrays.toString(basket2) + "\n");
+            System.out.printf("Состав корзины %s и %s одинаковый: %s\n", name1, name2, Arrays.toString(basket1));
+        else {
+            System.out.printf("Состав корзины %s и %s разный: \n", name1, name2);
+            System.out.printf("Состав корзины %s: %s\n", name1, Arrays.toString(basket1));
+            System.out.printf("Состав корзины %s: %s\n", name2, Arrays.toString(basket2));
+        }
     }
 
     // метод поиска товаров с самым длинным названием
@@ -100,7 +98,7 @@ public class Basket {
         int minLength = basket[0].length();
 
         for(String product : basket){
-            if(minLength < product.length())
+            if(minLength > product.length())
                 minLength = product.length();
         }
 

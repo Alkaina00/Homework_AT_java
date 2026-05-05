@@ -12,7 +12,7 @@ public class Password {
                     && !password.contains("1234")
                     && !password.contains("qwerty");
 
-            System.out.println(String.format("Пароль %s прошел проверку: ", password) + goodPass);
+            System.out.printf("Пароль %s прошел проверку: %b\n", password, goodPass);
         }
     }
 }
