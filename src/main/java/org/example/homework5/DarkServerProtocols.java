@@ -44,9 +44,7 @@ public class DarkServerProtocols {
     // 4. Протокол РАНДОМАЙЗЕР
     public static String generateAgentId(String prefix, int seed) {
         Random random = new Random(seed);
-        int numRandom = random.nextInt(9000) + 1000;
-
-        numRandom = Math.abs(numRandom);
+        int numRandom = Math.abs(random.nextInt(1000, 10000));
 
         return prefix + "-" + numRandom;
     }
