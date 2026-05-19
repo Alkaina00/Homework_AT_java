@@ -4,7 +4,7 @@ public class Parcel {
     private String nameRecipient;
     private String addressDelivery;
     protected double weightPackage;
-    private String numberTrack;
+    String numberTrack;
 
     public Parcel() {
     }
