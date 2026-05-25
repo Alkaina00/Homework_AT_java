@@ -8,10 +8,12 @@ public class ExpressParcel extends Parcel {
         this.deliveryHours = deliveryHours;
     }
 
+    @Override
     public double calculateDeliveryPrice() {
         return deliveryHours < 24 ? super.calculateDeliveryPrice() + 500 : super.calculateDeliveryPrice();
     }
 
+    @Override
     public void printInfo() {
         super.printInfo();
         System.out.printf("Delivery deadline: %d hours%n", deliveryHours);
