@@ -13,11 +13,21 @@ public class Winamp {
 
         Playlist playlist = new Playlist("lovePlaylist", listMusic);
         System.out.println(playlist);
+        System.out.println();
 
+        System.out.println("-----Позитивные проверки-----");
         playlist.addMusic("newMusic");
-        playlist.deleteMusic(1);
+        playlist.deleteMusic(9);
         playlist.updateMusic(2, "updateMusic");
         playlist.getMusic(4);
+        System.out.println();
+
+        System.out.println("-----Негативные проверки-----");
+        playlist.deleteMusic(100);
+        playlist.updateMusic(100, "updateMusic");
+        playlist.getMusic(100);
+        System.out.println();
+
 
         System.out.println(playlist);
     }

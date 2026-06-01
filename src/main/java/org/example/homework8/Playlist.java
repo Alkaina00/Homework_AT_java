@@ -33,17 +33,30 @@ public class Playlist {
     }
 
     public void deleteMusic(int index){
-        System.out.println("Удалена песня: " + listMusic.get(index));
-        listMusic.remove(index);
+        if(index >= 0 && index < listMusic.size()) {
+            System.out.println("Удалена песня: " + listMusic.get(index));
+            listMusic.remove(index);
+        }
+        else System.out.println("Песни с данным индексом нет в списке");
     }
 
     public void updateMusic(int index, String music) {
-        System.out.printf("Обновлена песня: %s, новое название: %s%n", listMusic.get(index), music);
-        listMusic.set(index, music);
+        if(index >= 0 && index < listMusic.size()) {
+            System.out.printf("Обновлена песня: %s, новое название: %s%n", listMusic.get(index), music);
+            listMusic.set(index, music);
+        }
+        else System.out.println("Песни с данным индексом нет в списке");
     }
 
-    public void getMusic(int index) {
-        System.out.println("Получение песни по индексу: " + listMusic.get(index));
+    public String getMusic(int index) {
+        if(index >= 0 && index < listMusic.size()) {
+            System.out.println("Получение песни по индексу: " + listMusic.get(index));
+            return listMusic.get(index);
+        }
+        else {
+            System.out.println("Песни с данным индексом нет в списке");
+            return null;
+        }
     }
 
     @Override
