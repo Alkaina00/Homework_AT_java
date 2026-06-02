@@ -1,12 +1,10 @@
 package org.example.homework8;
 
-import java.util.ArrayList;
-
 public class Winamp {
     public static void main(String[] args) {
         Playlist playlist = new Playlist("lovePlaylist");
 
-        System.out.println("Добавление песен в плейлист...");
+        System.out.printf("Добавление песен в плейлист %s...%n", playlist.getNamePlaylist());
         playlist.addMusic("music1");
         playlist.addMusic("music2");
         playlist.addMusic("music3");
